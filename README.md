@@ -1,32 +1,41 @@
-# What is Infrastructure as Code (IaC)
+# Infrastructure as Code (IaC) and Terraform
 
-IaC stands for Infrastructure as Code. It's a modern DevOps practice where infrastructure setup and management (like
-servers, networks, databases, etc.) are written and maintained using code instead of manual processes.
+## What is IaC?
 
-## 🔧 Key Concepts:
-- Declarative or Imperative Syntax: You define what infrastructure you want (declarative) or how to build it step by
-step (imperative).
+**Infrastructure as Code (IaC)** is the practice of managing and provisioning IT infrastructure using code, rather than
+manual processes. It allows you to define your infrastructure in configuration files that can be versioned, reused, and
+shared.
 
-- Version Control: Since infrastructure is written as code, you can track changes using Git, just like with regular
-code.
+### 🔧 Key Benefits:
+- **Consistency** – No manual errors or configuration drift.
+- **Speed & Automation** – Deploy infrastructure rapidly.
+- **Version Control** – Infrastructure changes are tracked in Git.
+- **Scalability** – Easily manage infrastructure at scale.
 
-- Automation: You can automatically provision and configure resources with tools instead of clicking around in a cloud
-provider’s UI.
+### 🛠️ Popular IaC Tools:
+- **Terraform** – works across multiple cloud providers.
+- **AWS CloudFormation** – AWS-specific.
+- **Pulumi** – lets you use programming languages like TypeScript or Python.
+- **Ansible, Chef, Puppet** – also used for configuration management, sometimes overlapping with IaC.
 
-## 🛠️ Popular IaC Tools:
-Terraform – works across multiple cloud providers.
+## What is Terraform?
 
-AWS CloudFormation – AWS-specific.
+**Terraform** is an open-source IaC tool by **HashiCorp** that lets you define and manage cloud infrastructure using a
+declarative language called **HCL (HashiCorp Configuration Language)**.
 
-Pulumi – lets you use programming languages like TypeScript or Python.
+### ✅ What Terraform Can Do:
+- Provision cloud resources (AWS, GCP, Azure, etc.)
+- Manage networking (VPCs, Subnets, Load Balancers)
+- Set up storage (S3, databases)
+- Manage DNS, GitHub resources, Kubernetes, and more
 
-Ansible, Chef, Puppet – also used for configuration management, sometimes overlapping with IaC.
+## Terraform Infrastructure
 
-## 🚀 Benefits:
-Consistency & Repeatability – no more “it works on my machine” issues.
+"Terraform infrastructure" refers to any cloud or on-prem resources provisioned and managed using Terraform scripts.
 
-Speed – launch environments quickly.
-
-Scalability – automate provisioning at scale.
-
-Auditability – changes are tracked and reviewable.
+### 🛠️ Typical Terraform Workflow:
+1. **Write** `.tf` files to describe infrastructure.
+2. **Initialize**: `terraform init`
+3. **Plan**: `terraform plan` – preview changes.
+4. **Apply**: `terraform apply` – create/update resources.
+5. **Destroy**: `terraform destroy` – remove all resources.
